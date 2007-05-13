@@ -1,0 +1,23 @@
+<%=render_partial 'header', "What career do you want?"%>
+<% if @job == nil %>
+<h2>Displaying all companies</h2>
+<% else%>
+<h2>Matching companies for: <b><%= @job.name %></b></h2>
+<%end%>
+<table border=1 width="25%">
+<tr>
+    <td>Company</td>
+    <td>Rating</td>
+</tr>
+<% @companies.each do |company|%>
+<tr>
+<td><%=company.name%> </td>
+<% if @job == nil %>
+<td><%=company.total_rank%></td>
+<%else%>
+<td><%=(Ranking.find_by_company_and_job company, @job).count%></td>
+<% end%>
+</tr>
+<%end%>
+</table>
+<a href="/career_fair/collector">Back To Start</a>

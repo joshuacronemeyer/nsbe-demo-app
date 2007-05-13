@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+--- 
+two: 
+  job_id: 
+  id: "2"
+  company_id: 
+  count: 
+one: 
+  job_id: 
+  id: "1"
+  company_id: 
+  count: 

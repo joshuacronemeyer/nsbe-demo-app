@@ -1,0 +1,42 @@
+.container {
+    padding-top: 50;
+    width: 700px;
+}
+
+.new_company  {
+    height: 30px;
+	background-image: url('/images/middle_round.jpg');
+	background-repeat: no-repeat;
+}
+
+.left {
+	float: left;
+	text-align: center
+}
+.right {
+	float: right;
+	text-align: center
+}
+
+#new_companies {
+    padding-top: 49;
+    width: 300px;
+    height: 83px;
+	background-image: url('/images/top_round.jpg'); 
+	background-repeat: no-repeat;
+}
+
+#bottom_round {
+    width: 300px;
+    height: 83px;
+	background-image: url('/images/bottom_round.jpg');
+	background-repeat: no-repeat;
+}
+
+#job_entry {
+    padding-top: 30;
+    width: 300px;
+    height: 83px;
+	background-image: url('/images/round_rectangle.jpg'); 
+	background-repeat: no-repeat;
+}

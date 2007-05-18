@@ -28,9 +28,6 @@ require 'tasks/rails'
 #
 #the initial case when there is not a schema_info.yml file.  we should default to latest version.
 #
-#Creating a new table will create an empty yaml.  Make sure this works.
-#
-#Deleting a table leaves behind the fixture.
 namespace :db do
 namespace :fixtures do
 desc "Run migrations on your test fixtures."
@@ -41,6 +38,7 @@ task :migrate do
   ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'])
   #create db at the same version of our fixtures
   ActiveRecord::Migrator.migrate("db/migrate/", get_current_fixture_version())
+  initial_tables = ActiveRecord::Base.connection.tables
   RAILS_ENV = "test"
   #load fixture
   Rake::Task["db:fixtures:load"].invoke
@@ -50,13 +48,23 @@ task :migrate do
   #dump fixtures back out.
   ActiveRecord::Base.connection.tables.each do |table_name|
     yaml_file_name = "#{fixtures_path}/#{table_name}.yml"
-    yaml = YAML::load_file(yaml_file_name)
-    fixture_names = gather_fixture_names(table_name, yaml)
-    top_of_file_comment = grab_comment_from_top_of_file(yaml_file_name)
-    write_fixture_to_file(table_name, yaml_file_name, fixture_names, top_of_file_comment)
+    if (File.exists?(yaml_file_name))
+      yaml = YAML::load_file(yaml_file_name)
+      fixture_names = gather_fixture_names(table_name, yaml)
+      top_of_file_comment = grab_comment_from_top_of_file(yaml_file_name)
+      write_fixture_to_file(table_name, yaml_file_name, fixture_names, top_of_file_comment)
+    end
   end
+  resulting_tables = ActiveRecord::Base.connection.tables
+  deleted_tables = initial_tables - resulting_tables
+  puts deleted_tables
+  delete_fixtures(fixtures_path, deleted_tables)
 end
 end
+end
+
+def delete_fixtures(fixtures_path, deleted_tables)
+  deleted_tables.each{|table_name| File.delete("#{fixtures_path}/#{table_name}.yml") if File.exists?("#{fixtures_path}/#{table_name}.yml")}  
 end
 
 def get_current_fixture_version
@@ -89,7 +97,7 @@ end
 
 def write_fixture_to_file(source_table_name, destination_file_name, fixture_names, top_of_file_comment)
   sql  = 'SELECT * FROM %s'
-  File.open(destination_file_name, 'wb') do |file|
+  File.open(destination_file_name, File::RDWR|File::TRUNC|File::CREAT) do |file|
     file.write(top_of_file_comment)
     table = ActiveRecord::Base.connection.select_all(sql %source_table_name).inject({}) do |hash, record|
       hash[fixture_names[record["id"]]] = record
@@ -98,3 +106,4 @@ def write_fixture_to_file(source_table_name, destination_file_name, fixture_name
     file.write(table.to_yaml)
   end
 end
+

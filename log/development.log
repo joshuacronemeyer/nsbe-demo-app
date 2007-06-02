@@ -9568,3 +9568,197 @@ Processing CareerFairController#collector (for 127.0.0.1 at 2007-05-05 14:55:40)
 Rendering career_fair/collector
 Rendered career_fair/_header (0.00009)
 Completed in 0.00186 (536 reqs/sec) | Rendering: 0.00118 (63%) | 200 OK [http://localhost/career_fair/collector]
+  [4;36;1mSQL (0.007728)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002561)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000260)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.003504)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001964)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.002698)[0m   [0;1mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.002387)[0m   [0mUPDATE schema_info SET version = 2[0m
+Reached target version: 2
+  [4;36;1mSQL (0.000363)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.005276)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002345)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.002846)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001916)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.002709)[0m   [0;1mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.002070)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000243)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRankings (3)
+  [4;35;1mSQL (0.002861)[0m   [0mCREATE TABLE rankings ("id" INTEGER PRIMARY KEY NOT NULL, "company_id" int DEFAULT NULL, "job_id" int DEFAULT NULL, "count" int DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002097)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000371)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRankings (3)
+  [4;35;1mSQL (0.002901)[0m   [0mDROP TABLE rankings[0m
+  [4;36;1mSQL (0.001987)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.002210)[0m   [0;1mDROP TABLE jobs[0m
+  [4;35;1mSQL (0.004530)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000299)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.002387)[0m   [0mDROP TABLE companies[0m
+  [4;36;1mSQL (0.002292)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mSQL (0.000268)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000191)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.010231)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.004032)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000355)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000211)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.009613)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.010842)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002724)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000323)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.003197)[0m   [0;1mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.002244)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000296)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRankings (3)
+  [4;35;1mSQL (0.009930)[0m   [0mCREATE TABLE rankings ("id" INTEGER PRIMARY KEY NOT NULL, "company_id" int DEFAULT NULL, "job_id" int DEFAULT NULL, "count" int DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002359)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000492)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000436)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000084)[0m   [0mPRAGMA index_list(companies)[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list(jobs)[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list(rankings)[0m
+  [4;36;1mSQL (0.000576)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.031359)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002462)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000257)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000257)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.003185)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002268)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.005572)[0m   [0;1mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.002734)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000250)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRankings (3)
+  [4;35;1mSQL (0.003287)[0m   [0mCREATE TABLE rankings ("id" INTEGER PRIMARY KEY NOT NULL, "company_id" int DEFAULT NULL, "job_id" int DEFAULT NULL, "count" int DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002238)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000389)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000274)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000317)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRankings (3)
+  [4;35;1mSQL (0.004021)[0m   [0mDROP TABLE rankings[0m
+  [4;36;1mSQL (0.002221)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000260)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.005013)[0m   [0;1mDROP TABLE jobs[0m
+  [4;35;1mSQL (0.002265)[0m   [0mUPDATE schema_info SET version = 1[0m
+Reached target version: 1
+  [4;36;1mSQL (0.000324)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000293)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mPRAGMA index_list(companies)[0m
+  [4;35;1mSQL (0.000278)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.177364)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.014295)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000356)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000275)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.007067)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.005114)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+Reached target version: 1
+  [4;35;1mSQL (0.000371)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000287)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000329)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;35;1mSQL (0.005872)[0m   [0mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.004210)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Reached target version: 2
+  [4;35;1mSQL (0.000318)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000333)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000075)[0m   [0mPRAGMA index_list(companies)[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mPRAGMA index_list(jobs)[0m
+  [4;35;1mSQL (0.000615)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000454)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000353)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.021474)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.004743)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.006027)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.004115)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;36;1mSQL (0.005238)[0m   [0;1mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.005021)[0m   [0mUPDATE schema_info SET version = 2[0m
+Reached target version: 2
+  [4;36;1mSQL (0.000332)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000282)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;35;1mSQL (0.005510)[0m   [0mDROP TABLE jobs[0m
+  [4;36;1mSQL (0.006517)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+Reached target version: 1
+  [4;35;1mSQL (0.000340)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000263)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000073)[0m   [0mPRAGMA index_list(companies)[0m
+  [4;36;1mSQL (0.000260)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000364)[0m   [0;1mSELECT * FROM companies[0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.018076)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.005481)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000325)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCompanies (1)
+  [4;35;1mSQL (0.006596)[0m   [0mCREATE TABLE companies ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.007367)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+Reached target version: 1
+  [4;35;1mSQL (0.000385)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000258)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000203)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000194)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mPRAGMA index_list(companies)[0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000206)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000354)[0m   [0mSELECT * FROM companies[0m
+  [4;36;1mSQL (0.000281)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m

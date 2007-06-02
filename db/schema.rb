@@ -2,13 +2,9 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 1) do
 
   create_table "companies", :force => true do |t|
-    t.column "name", :string, :default => "NULL"
-  end
-
-  create_table "jobs", :force => true do |t|
     t.column "name", :string, :default => "NULL"
   end
 
